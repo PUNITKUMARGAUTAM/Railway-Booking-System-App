@@ -1,0 +1,3 @@
+.hero-wrap { margin: 0 auto; }
+.hero-img { height: 420px; object-fit: cover; }
+@media (max-width:768px){ .hero-img{ height: 220px; } }

@@ -1,0 +1,7 @@
+/* global resets */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, Arial; background:#f7f9fc; color:#222; }
+.container-app { max-width: 1150px; margin: 0 auto; padding: 1rem; }
+
+/* helper */
+.mt-nav-space { margin-top: 88px; } /* leave space for fixed navbar */
