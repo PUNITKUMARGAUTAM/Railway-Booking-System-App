@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -16,6 +18,11 @@ import RegisterModal from "./components/RegisterModal";
 function AppContent() {
   const [showAuth, setShowAuth] = useState({ type: null });
   const navigate = useNavigate();
+
+  // ✅ Test toast trigger
+  const showTestToast = () => {
+    toast.success("This is a test toast!");
+  };
 
   return (
     <>
@@ -48,10 +55,28 @@ function AppContent() {
             />
             <Route path="*" element={<TrainList />} />
           </Routes>
+
+          {/* ✅ Test Button */}
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <button onClick={showTestToast}>Show Test Toast</button>
+          </div>
         </div>
       </div>
 
       <Footer />
+
+      {/* ✅ ToastContainer */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       <LoginModal
         show={showAuth.type === "login"}

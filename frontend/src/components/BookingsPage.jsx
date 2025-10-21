@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import { getBookings, cancelBooking } from "../services/api";
 import { Table, Button } from "react-bootstrap";
 
@@ -14,12 +15,23 @@ export default function BookingsPage() {
   useEffect(() => { fetch(); }, []);
 
   async function handleCancel(id) {
-    if (!window.confirm("Cancel booking?")) return;
-    try {
-      await cancelBooking(id);
-      fetch();
-    } catch (e) { alert(e.message || "Failed"); }
+  if (!window.confirm("Cancel booking?")) return;
+  try {
+    await cancelBooking(id);
+    toast.success("Booking cancelled");
+    fetch();
+  } catch (e) {
+    toast.error(e?.message || "Failed to cancel");
   }
+}
+
+  // async function handleCancel(id) {
+  //   if (!window.confirm("Cancel booking?")) return;
+  //   try {
+  //     await cancelBooking(id);
+  //     fetch();
+  //   } catch (e) { alert(e.message || "Failed"); }
+  // }
 
   return (
     <div>

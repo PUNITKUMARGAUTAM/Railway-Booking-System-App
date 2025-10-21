@@ -1,1 +1,35 @@
-.trainlist-root { padding: 1rem 0; }
+/* .trainlist-root {
+  padding: 20px;
+}
+
+.trainlist-root h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.train-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.trainlist-root .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.trainlist-root .btn:hover {
+  background-color: #0056b3;
+} */
+
+.trainlist-root {
+  padding: 20px;
+}
+
+.train-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
